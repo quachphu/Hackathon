@@ -1,5 +1,6 @@
 # Link Demo : 
 Link1 : https://www.youtube.com/watch?v=TNiw3K0_gpU
+
 Link2 : https://www.youtube.com/watch?v=ytsUsYFrEZg
 # Inspiration 
 As a team, we strive to develop technology that is not only innovative, but inclusive. Current technology is rarely accessible to people with impairments. We challenged ourselves to develop an innovative tool that enhances independence for users and bridges the gap between technology and accessibility all the while making technology truly inclusive.
