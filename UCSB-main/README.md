@@ -544,10 +544,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 **Amazing team that built this in record time!**
 
-- **Lead Developer** - Full-stack architecture and computer vision
-- **AI Specialist** - LangChain integration and chatbot development  
-- **Mobile Developer** - React Native UI/UX and animations
-- **Data Engineer** - Database design and API optimization
+- **Judah Boyce** - Full-stack Developer - Database design and API optimization
+- **Ivan Li** - AI/Computer Vision  
+- **Phu Quach** - AI/Computer Vision, LangChain integration and chatbot development 
 
 ## 🙏 Acknowledgments
 
