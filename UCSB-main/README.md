@@ -557,10 +557,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - **YOLO Authors** - For open-source computer vision framework
 
 ## 📞 Support & Contact
-
-- **🐛 Bug Reports**: [GitHub Issues](https://github.com/quachphu/Hackathon/issues)
-- **💡 Feature Requests**: [GitHub Discussions](https://github.com/quachphu/Hackathon/discussions)
-- **📧 General Questions**: [your-email@example.com]
+- **📧 General Questions**: [quachphuwork@example.com]
 - **🎓 UCSB Students**: Visit us at the next hackathon!
 
 ---
