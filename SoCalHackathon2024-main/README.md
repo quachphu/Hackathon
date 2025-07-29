@@ -256,10 +256,10 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 👥 Team
 
 **DFPP Team**
-- **Dichill** - AI Integration & Computer Vision
-- **Fahat** - Backend Development & API Design  
+- **Dichill** - Full Stack Application and System Architecture
+- **Fahat** - Frontend & User Experience  
 - **Paola** - Frontend & User Experience
-- **Phu** - System Architecture & Automation
+- **Phu** - Full Stack Application 
 
 ## 🙏 Acknowledgments
 
@@ -270,7 +270,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📞 Support
 
-- 📧 Email: [your-email@example.com]
+- 📧 Email: [quachphuwork@gmail.com]
 - 🐛 Issues: [GitHub Issues](https://github.com/quachphu/Hackathon/issues)
 - 💬 Discussions: [GitHub Discussions](https://github.com/quachphu/Hackathon/discussions)
 
