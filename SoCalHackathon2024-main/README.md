@@ -2,27 +2,278 @@
 Link1 : https://www.youtube.com/watch?v=TNiw3K0_gpU
 
 Link2 : https://www.youtube.com/watch?v=ytsUsYFrEZg
-# Inspiration 
-As a team, we strive to develop technology that is not only innovative, but inclusive. Current technology is rarely accessible to people with impairments. We challenged ourselves to develop an innovative tool that enhances independence for users and bridges the gap between technology and accessibility all the while making technology truly inclusive.
 
-# What it does
-This is just an example of what could be done if the API for the Dain was publicly available, but due to limitations, we can only do certain things through the sandbox. With Dain’s unique blockchain system, which is very secure and a whole new world, users can add “services” that may suit their needs. Whether for stocks, cooking, or delivering food, Our technology combines Dain and the community to make a unique mixture. With Dain’s services, our software is flexible enough to be anything you want and simultaneously be your assistant on your device. You can navigate through your voice, click what you like with a word, control your screen, scroll up and down, and many more exciting features.
+# VoiceBridge 🎯
 
-# How we built it
-Attending the Dain Workshop was a big start, we incorporated python with several libraries such as flask, openai and pyautogui with our Dain Service to do impossible things like controlling our computers, communicating with ChatGPT and many more amazing things that we did.
+**AI-Powered Computer Control for Enhanced Accessibility**
 
-# Challenges we ran into
-Before the Dain Workshop, we had trouble finding the API keys. We also had issues with Dain's sandbox sometimes not working, and we had to refresh it once in a while.
+[![SoCalHackathon2024](https://img.shields.io/badge/SoCalHackathon-2024-blue.svg)](https://github.com/quachphu/Hackathon)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Python](https://img.shields.io/badge/Python-3.8+-green.svg)](https://python.org)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.5+-blue.svg)](https://typescriptlang.org)
 
-We were also having a hard time implementing the screenshot function and saving it to one of our temp directories. We also encountered problems with implementing OCR and PyAutoGUI, detecting buttons, text or something that a user would like to click on.
+## 📖 Overview
 
-Although these were really hard, we managed to do it and we are proud to make this into a reality.
+VoiceBridge is an innovative accessibility tool that bridges the gap between technology and users with impairments. Using advanced AI vision and natural language processing, it enables users to control their computers through voice commands, making technology truly inclusive.
 
-Accomplishments that we're proud of
-We were actually able to emulate key presses, clicks, and mouse movements through Dain's Sandbox. We were also able to integrate other services, and it shows how flexible our service is with other services that Dain offers. If we made this into an software, there are a lot of possibilities that we could do with this one.
+### 🎯 Mission
+> *"Making technology accessible to everyone, regardless of physical limitations"*
 
-# What we learned
-Team Work and collaboration, Planning, Pyautogui, flask
+## ✨ Key Features
 
-# What's next for VoiceBridge
-One of our future goals is to make the software and a Chrome extension to parse the website so that the LLM can fully understand what you are seeing, and what you are doing within the website. Making it much more accessible in the future. Scale in and scale out function and automatically detecting face using CNN
+- 🖥️ **Screen Analysis** - AI-powered visual understanding of your screen
+- 🗣️ **Voice Control** - Natural language commands for computer interaction
+- 🖱️ **Smart Clicking** - Intelligent UI element detection and interaction
+- ⌨️ **Text Input** - Voice-to-text typing capabilities
+- 🌐 **Browser Integration** - Chrome extension for web navigation
+- 📜 **Page Navigation** - Forward/backward navigation with voice commands
+- 🔄 **Scrolling Control** - Smooth scrolling with voice commands
+
+## 🏗️ Architecture
+
+VoiceBridge uses a multi-service architecture combining AI, computer vision, and automation:
+
+```
+┌─────────────────┐    ┌──────────────────┐    ┌─────────────────┐
+│   DAIN Service  │    │   Python Flask   │    │ Chrome Extension│
+│   (TypeScript)  │◄──►│      API         │    │   (JavaScript)  │
+│                 │    │   (Port 3000)    │    │                 │
+└─────────────────┘    └──────────────────┘    └─────────────────┘
+         │                       │                       │
+         ▼                       ▼                       ▼
+┌─────────────────┐    ┌──────────────────┐    ┌─────────────────┐
+│   OpenAI GPT-4  │    │   PyAutoGUI      │    │  Browser APIs   │
+│   Vision API    │    │   Screen Control │    │                 │
+└─────────────────┘    └──────────────────┘    └─────────────────┘
+```
+
+## 🛠️ Tech Stack
+
+### **Core Services**
+- **DAIN Protocol** - AI service framework
+- **Node.js/TypeScript** - Main service layer
+- **Python Flask** - Computer automation API
+- **Chrome Extension** - Browser integration
+
+### **AI & Vision**
+- **OpenAI GPT-4 Vision** - Screen analysis and understanding
+- **EasyOCR** - Optical Character Recognition
+- **Computer Vision (OpenCV)** - Image processing
+- **Levenshtein Distance** - Text similarity matching
+
+### **Automation**
+- **PyAutoGUI** - Screen automation (clicking, typing, scrolling)
+- **Screen Capture** - Real-time screen analysis
+- **Keyboard/Mouse Control** - System-level automation
+
+### **Development**
+- **TypeScript 5.5+** - Type-safe development
+- **Hono** - Lightweight web framework
+- **Zod** - Schema validation
+- **Axios** - HTTP client
+
+## 🚀 Quick Start
+
+### Prerequisites
+- Node.js 18+
+- Python 3.8+
+- OpenAI API Key
+- DAIN API Key
+
+### Installation
+
+1. **Clone the repository**
+```bash
+git clone https://github.com/quachphu/Hackathon.git
+cd SoCalHackathon2024-main
+```
+
+2. **Install Node.js dependencies**
+```bash
+npm install
+```
+
+3. **Install Python dependencies**
+```bash
+cd api
+pip install flask opencv-python pyautogui easyocr levenshtein matplotlib numpy
+```
+
+4. **Environment Setup**
+```bash
+# Create .env.development file
+cp .env.development.example .env.development
+
+# Add your API keys
+DAIN_API_KEY=your_dain_api_key_here
+OPENAI_API_KEY=your_openai_api_key_here
+```
+
+5. **Chrome Extension Setup**
+- Open Chrome and go to `chrome://extensions/`
+- Enable "Developer mode"
+- Click "Load unpacked" and select the `extension/` folder
+
+### Running the Application
+
+1. **Start the Python Flask API**
+```bash
+cd api
+python main.py
+# Server runs on http://localhost:3000
+```
+
+2. **Start the DAIN Service**
+```bash
+npm run dev
+# Service runs on port 2022
+```
+
+3. **Test the connection**
+```bash
+curl http://localhost:3000/analyze_screen
+```
+
+## 📋 API Reference
+
+### Flask API Endpoints
+
+| Endpoint | Method | Description |
+|----------|---------|-------------|
+| `/analyze_screen` | GET | Capture and analyze current screen |
+| `/write_text` | POST | Type text on screen |
+| `/press_key` | POST | Emulate key presses |
+| `/click_request` | POST | Click on specified UI element |
+| `/scroll` | POST | Scroll page up/down |
+| `/navigate_page` | POST | Navigate forward/backward |
+| `/open` | POST | Open new tab/window |
+
+### DAIN Service Tools
+
+- **analyze-screen** - Analyzes user's screen content
+- **click-request** - Clicks on specified text/buttons
+- **scroll-page** - Controls page scrolling
+- **navigate-page** - Page navigation controls
+- **write-string** - Text input functionality
+- **press-key** - Keyboard emulation
+- **open-tab** - Tab management
+
+## 🎮 Usage Examples
+
+### Voice Commands
+```
+"What's on my screen?"          → Analyzes current screen content
+"Click on the login button"     → Finds and clicks login button
+"Scroll down"                   → Scrolls page downward
+"Type 'Hello World'"           → Types the specified text
+"Press Enter"                   → Presses Enter key
+"Go back"                       → Navigates to previous page
+"Open new tab"                  → Opens a new browser tab
+```
+
+### Programmatic Usage
+```typescript
+// Analyze screen
+const analysis = await dainService.tools.analyzeScreen({
+  question: "What's displayed on the screen?"
+});
+
+// Click on element
+await dainService.tools.clickRequest({
+  question: "Click on the submit button"
+});
+
+// Type text
+await dainService.tools.writeString({
+  question: "Enter my email address"
+});
+```
+
+## 🔧 Configuration
+
+### DAIN Configuration (`dain.json`)
+```json
+{
+  "project-id": "",
+  "api-key": "MUST PUT IN .env.development as DAIN_API_KEY=YOUR_API_KEY",
+  "main-file": "src/index.ts",
+  "static-dir": "static",
+  "out-dir": "dist",
+  "environment": "development",
+  "version": "1.0.0",
+  "runtime": "node"
+}
+```
+
+### Python API Configuration
+- **Port**: 3000 (configurable in `main.py`)
+- **Image Storage**: `../temp/image.png`
+- **OCR Language**: English (`["en"]`)
+
+## 🎯 Use Cases
+
+### Accessibility
+- **Motor Impairments** - Voice control for users with limited hand mobility
+- **Visual Impairments** - Screen reading and navigation assistance
+- **Cognitive Assistance** - Simplified computer interaction
+
+### Productivity
+- **Hands-free Computing** - Multitasking while controlling computer
+- **Voice Automation** - Streamlined workflow automation
+- **Remote Control** - Computer control from distance
+
+## 🏆 Hackathon Achievements
+
+**SoCalHackathon2024** - Building inclusive technology that bridges accessibility gaps
+
+### What We Built
+- Complete AI-powered accessibility suite
+- Real-time screen analysis and control
+- Natural language computer interaction
+- Cross-platform browser integration
+
+### Technical Challenges Overcome
+- Real-time OCR and computer vision integration
+- Seamless AI service communication
+- Precise UI element detection and interaction
+- Cross-service architecture coordination
+
+## 🤝 Contributing
+
+We welcome contributions! Please see our [Contributing Guidelines](CONTRIBUTING.md).
+
+### Development Setup
+1. Fork the repository
+2. Create a feature branch: `git checkout -b feature/amazing-feature`
+3. Commit changes: `git commit -m 'Add amazing feature'`
+4. Push to branch: `git push origin feature/amazing-feature`
+5. Open a Pull Request
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 👥 Team
+
+**DFPP Team**
+- **Dichill** - AI Integration & Computer Vision
+- **Fahat** - Backend Development & API Design  
+- **Paola** - Frontend & User Experience
+- **Phu** - System Architecture & Automation
+
+## 🙏 Acknowledgments
+
+- **DAIN Protocol** - For the amazing AI service framework
+- **OpenAI** - For powerful vision and language models
+- **SoCalHackathon2024** - For the opportunity to build inclusive technology
+- **Accessibility Community** - For inspiration and feedback
+
+## 📞 Support
+
+- 📧 Email: [your-email@example.com]
+- 🐛 Issues: [GitHub Issues](https://github.com/quachphu/Hackathon/issues)
+- 💬 Discussions: [GitHub Discussions](https://github.com/quachphu/Hackathon/discussions)
+
+---
+
+**Made with ❤️ for accessibility and inclusion**
